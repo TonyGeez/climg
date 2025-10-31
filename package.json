@@ -3,12 +3,14 @@
   "version": "1.0.0",
   "description": "Render PNG and JPEG images beautifully in your terminal using ANSI colors and Unicode blocks.",
   "main": "index.js",
+  "types": "index.d.ts",
   "type": "commonjs",
   "bin": {
     "climg": "index.js"
   },
   "files": [
     "index.js",
+    "index.d.ts",
     "README.md"
   ],
   "scripts": {
@@ -28,13 +30,14 @@
     "climg",
     "terminal",
     "image",
-    "ascii",
-    "cli",
-    "catimg",
     "ansi",
+    "cli",
+    "ascii",
+    "catimg",
     "nodejs",
     "png",
-    "jpeg"
+    "jpeg",
+    "render"
   ],
   "dependencies": {
     "jpeg-js": "^0.4.4",
