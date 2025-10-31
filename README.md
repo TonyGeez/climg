@@ -115,19 +115,35 @@ For older terminals, use the `-t` flag to enable 256-color mode.
 You can also use climg as a module in your own Node.js programs:
 
 ```javascript
-const { climg, loadImage, renderImage } = require('./climg.js');
+import { climg, loadImage, renderImage, ClimgOptions, ImageData } from "climg";
 
-// Display an image
-await climg('image.jpg', { width: 100, height: 30, trueColor: true });
+(async () => {
+  // Define rendering options (with full IntelliSense)
+  const options: ClimgOptions = {
+    width: 100,
+    height: 30,
+    trueColor: true,
+  };
 
-// Load an image and get pixel data
-const image = await loadImage('image.jpg');
-console.log(`Image dimensions: ${image.width}x${image.height}`);
+  // Display an image directly in the terminal
+  await climg("image.jpg", options);
 
-// Render image to string
-const output = renderImage(image.pixels, { width: 80, trueColor: true });
-console.log(output);
+  // Load an image and inspect its pixel data
+  const image: ImageData = await loadImage("image.jpg");
+  console.log(`Image dimensions: ${image.width}x${image.height}`);
+
+  // Render the image to an ANSI string (instead of printing directly)
+  const output: string = renderImage(image.pixels, {
+    width: 80,
+    trueColor: true,
+  });
+
+  // Print the ANSI-rendered image manually
+  console.log(output);
+})();
 ```
+
+You can also run it in plain JavaScript (same syntax, just replace import with require).
 
 ## Notes
 
