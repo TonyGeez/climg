@@ -103,7 +103,7 @@ function parseSize(value, max) {
   return parseInt(str);
 }
 
-// Render image to terminal (catimg style - background colors with spaces)
+// Render image to terminal (climg style - background colors with spaces)
 function renderImage(pixels, options = {}) {
   const termWidth = process.stdout.columns;
   const termHeight = process.stdout.rows - 1;
@@ -113,7 +113,7 @@ function renderImage(pixels, options = {}) {
   let width = parseSize(options.width, termWidth);
   let height = parseSize(options.height, termHeight);
   
-  // For catimg, each character is 1 pixel wide, 2 pixels tall
+  // For climg, each character is 1 pixel wide, 2 pixels tall
   const resized = resizeImage(pixels, width, height * 2);
   const lines = [];
 
@@ -162,7 +162,7 @@ function rgbToAnsi256(r, g, b) {
 }
 
 // Main function
-async function catimg(filepath, options = {}) {
+async function climg(filepath, options = {}) {
   try {
     const image = await loadImage(filepath);
     const output = renderImage(image.pixels, options);
@@ -178,7 +178,7 @@ if (require.main === module) {
   const args = process.argv.slice(2);
   
   if (args.length === 0) {
-    console.log('Usage: node catimg.js <image.png|jpg> [options]');
+    console.log('Usage: climg <image.png|jpg> [options]');
     console.log('');
     console.log('Options:');
     console.log('  -w <size>      Set width in pixels or percentage (e.g., 80 or 50%)');
@@ -186,12 +186,11 @@ if (require.main === module) {
     console.log('  -t             Disable true color, use 256 colors instead');
     console.log('');
     console.log('Examples:');
-    console.log('  node catimg.js image.jpg');
-    console.log('  node catimg.js image.jpg -w 100 -h 30');
-    console.log('  node catimg.js image.jpg -w 50%');
-    console.log('  node catimg.js image.jpg -w 80% -h 50%');
+    console.log('  climg image.jpg');
+    console.log('  climg image.jpg -w 100 -h 30');
+    console.log('  climg image.jpg -w 50%');
+    console.log('  climg image.jpg -w 80% -h 50%');
     console.log('');
-    console.log('Install dependencies: npm install pngjs jpeg-js');
     process.exit(1);
   }
 
@@ -210,7 +209,7 @@ if (require.main === module) {
     }
   }
 
-  catimg(filepath, options);
+  climg(filepath, options);
 }
 
-module.exports = { catimg, loadImage, renderImage };
+module.exports = { climg, loadImage, renderImage };

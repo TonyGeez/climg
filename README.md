@@ -36,7 +36,7 @@ climg image.jpg -w 50% -h 80%
 
 Set only width (height will be calculated to maintain aspect ratio):
 ```bash
-climg.js image.jpg -w 120
+climg image.jpg -w 120
 ```
 
 Set only height (width will be calculated to maintain aspect ratio):
