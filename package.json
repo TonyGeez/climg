@@ -1,0 +1,26 @@
+{
+  "name": "climg",
+  "version": "1.0.0",
+  "bin": {
+    "climg": "./index.js"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TonyGeez/climg.git"
+  },
+  "author": "TonyGeez (Antoine R.)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/TonyGeez/climg/issues"
+  },
+  "homepage": "https://github.com/TonyGeez/climg#readme",
+  "description": "",
+  "dependencies": {
+    "jpeg-js": "^0.4.4",
+    "pngjs": "^7.0.0"
+  }
+}
