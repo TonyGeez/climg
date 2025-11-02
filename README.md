@@ -1,5 +1,8 @@
-# climg
+# Print image in your terminal
 A Node.js utility that displays images directly in your terminal using ANSI escape codes and Unicode characters.
+
+<img width="992" height="1032" alt="climg" src="https://github.com/user-attachments/assets/b28a84d0-43e5-4049-8638-7c87e22a0151" />
+
 
 ## Features
 - Display PNG and JPEG images in the terminal
